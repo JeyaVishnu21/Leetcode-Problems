@@ -1,0 +1,34 @@
+class Solution:
+    def fcomplement(self, nums, x, start_idx):
+        target_sum = -x
+        seen_elements = set()
+        valid_pairs = []  
+        
+        for i in range(start_idx, len(nums)):
+            a = nums[i]
+            b = target_sum - a
+            if b in seen_elements:
+                valid_pairs.append((a, b)) 
+            seen_elements.add(a)
+            
+        return valid_pairs 
+
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        nums.sort()  
+        n = len(nums) 
+        unique_triplets = set() 
+
+        for j in range(n):
+            if j > 0 and nums[j] == nums[j - 1]:
+                continue
+                
+            x = nums[j]
+           
+            pairs = self.fcomplement(nums, x, j + 1)
+            
+          
+            for a, b in pairs:
+                triplet = tuple(sorted([x, a, b]))
+                unique_triplets.add(triplet)
+                
+        return [list(t) for t in unique_triplets]
