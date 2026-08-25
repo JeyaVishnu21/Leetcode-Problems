@@ -2,7 +2,7 @@ class Solution:
     def fcomplement(self, nums, x, start_idx):
         target_sum = -x
         seen_elements = set()
-        valid_pairs = []  
+        valid_pairs = [] 
         
         for i in range(start_idx, len(nums)):
             a = nums[i]
