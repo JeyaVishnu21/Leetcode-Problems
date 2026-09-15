@@ -1,3 +1,4 @@
+
 class Solution {
 public:
     std::string decimalToBinary(int decimalNum) {
