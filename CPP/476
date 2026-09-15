@@ -1,3 +1,4 @@
+
 class Solution {
 public:
     int binaryToDecimal(const std::string& binaryStr) {
